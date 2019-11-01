@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Segment, Header, Form } from 'semantic-ui-react'
 
-function App() {
+const options = [
+  { key: 'm', text: 'Male', value: 'male' },
+  { key: 'f', text: 'Female', value: 'female' },
+  { key: 'o', text: 'Other', value: 'other' },
+]
+
+const App = () => {
+  let unitFrom = 'EUR'
+  let unitConv = 'USD'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Segment style={{margin:'auto', maxWidth:'500px', marginTop:30}}>
+      <Header size='medium' style={{marginBottom:0}}>1.00  {unitFrom} entspricht</Header>
+      <Header size='large' color={'blue'} style={{marginTop:0}}>0.99 {unitConv}</Header>
+      <Form>
+        <Form.Group widths='equal'>
+          <Form.Input fluid />
+          <Form.Select fluid options={options} />
+        </Form.Group>
+        <Form.Group widths='equal'>
+          <Form.Input fluid />
+          <Form.Select fluid options={options} />
+        </Form.Group>
+      </Form>
+    </Segment>
+  )
 }
 
-export default App;
+export default App
