@@ -15,8 +15,8 @@ const App = () => {
   const handleInput = (e, {value, name}) => {
     const itsMe = name==='from'
     setInputs({
-      [name]:value,
-      [itsMe ? 'dest' : 'from'] : value * rates[(itsMe? currency.dest : currency.from)]
+      [name]: value.replace(/\D/,''),
+      [itsMe ? 'dest' : 'from'] : value.replace(/\D/,'') * rates[(itsMe? currency.dest : currency.from)]
     })
   }
 
