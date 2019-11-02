@@ -1,6 +1,5 @@
 currency converter with React.
 
-1. The converter should roughly look like the layout (see below).
 2. Use a REST API for calculating the currencies.
 https://exchangeratesapi.io/
 3. Header behavior (area is marked with a red border – this border is of
